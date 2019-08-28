@@ -17,7 +17,7 @@
 <!-- Site Icons -->
 <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 <link rel="apple-touch-icon" href="{{ asset('assets/frontend/images/apple-touch-icon.png') }}">
-
+<link rel="stylesheet" href="{{ asset('assets/toastr.min.css') }}">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
 <!-- Site CSS -->
@@ -60,6 +60,20 @@
 <script src="{{ asset('assets/frontend/js/custom.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/portfolio.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/hoverdir.js') }}"></script>
+
 @stack('js')
+{{--<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>--}}
+<script src="{{ asset('assets/toastr.min.js') }}"></script>
+{!! Toastr::message() !!}
+<script>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    toastr.error('{{ $error }}', 'Error', {
+        'closeButton':'true',
+        'progressBar':'true'
+    });
+    @endforeach
+    @endif
+</script>
 </body>
 </html>

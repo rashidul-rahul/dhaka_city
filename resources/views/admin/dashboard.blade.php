@@ -309,3 +309,6 @@
         <!-- #END# Browser Usage -->
     </div>
 @endsection
+@push('js')
+    <script src="{{ asset('assets/backend/js/pages/index.js') }}"></script>
+@endpush

@@ -13,12 +13,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/toastr.min.css') }}">
 
     <!-- Bootstrap Core Css -->
     <link href="{{ asset('assets/backend/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="{{ asset('assets/backend/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/backend/plugins/node-waves/waves.css') }}" rel="stylesheet" />
 
     <!-- Animation Css -->
     <link href="{{ asset('assets/backend/plugins/animate-css/animate.css') }}" rel="stylesheet" />
@@ -94,11 +95,22 @@
 
 <!-- Sparkline Chart Plugin Js -->
 <script src="{{ asset('assets/backend/plugins/jquery-sparkline/jquery.sparkline.js') }}"></script>
-
-<!-- Custom Js -->
 <script src="{{ asset('assets/backend/js/admin.js') }}"></script>
-<script src="{{ asset('assets/backend/js/pages/index.js') }}"></script>
-
+<!-- Custom Js -->
+@stack('js')
+{{--<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>--}}
+<script src="{{ asset('assets/toastr.min.js') }}"></script>
+{!! Toastr::message() !!}
+<script>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    toastr.error('{{ $error }}', 'Error', {
+        'closeButton':'true',
+        'progressBar':'true'
+    });
+    @endforeach
+    @endif
+</script>
 <!-- Demo Js -->
 <script src="{{ asset('assets/backend/js/demo.js') }}"></script>
 </body>
