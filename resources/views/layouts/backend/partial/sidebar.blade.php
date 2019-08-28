@@ -49,6 +49,12 @@
                             <span>Category</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('admin/notice*') ? 'active':'' }}">
+                        <a href="{{ route('admin.notice.index') }}">
+                            <i class="material-icons">description</i>
+                            <span>Notice</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();

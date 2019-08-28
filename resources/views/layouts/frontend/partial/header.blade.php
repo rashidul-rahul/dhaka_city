@@ -12,11 +12,11 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a class="{{ Request::is('/') ? 'active':'' }}" href="{{ route('home') }}">Home</a></li>
                     <li><a href="about-us.html">About us</a></li>
                     <li><a href="services.html">Our Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="features.html">Features</a></li>
+                    <li><a class="{{ Request::is('notice') ? 'active':'' }}" href="{{ route('notice') }}">Notice</a></li>
                     <li>
                         <a href="testimonials.html">Testimonials</a>
                     </li>
