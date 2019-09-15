@@ -13,4 +13,7 @@ class IndexController extends Controller
     public function notice(){
         return view('notice');
     }
+    public function about(){
+        return view('about');
+    }
 }

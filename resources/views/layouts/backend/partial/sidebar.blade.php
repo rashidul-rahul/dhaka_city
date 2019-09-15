@@ -75,6 +75,18 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('moderator/notice*') ? 'active':'' }}">
+                        <a href="{{ route('moderator.notice.index') }}">
+                            <i class="material-icons">description</i>
+                            <span>Notice</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('moderator/information*') ? 'active':'' }}">
+                        <a href="{{ route('moderator.information.index') }}">
+                            <i class="material-icons">save</i>
+                            <span>Information</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();

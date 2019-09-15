@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/responsive.css') }}">
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/frontend/css/font-awesome.min.css') }}">
 
 <!-- Modernizer for Portfolio -->
 <script src="{{ asset('assets/frontend/js/modernizer.js') }}"></script>

@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Notice')
+@section('title', 'Information')
 
 @push('css')
     <link href="{{ asset('assets/backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
@@ -13,53 +13,32 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        All Notice
-                        <a href="{{ route('admin.notice.create') }}" class="btn btn-success waves-effect">
-                            <i class="material-icons">add</i>
-                            <span>Add</span>
-                        </a>
+                       Information
                     </h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                            <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Created User</th>
-                                <th>Created</th>
-                                <th>Action</th>
-                            </tr>
-                            </thead>
-                            <tfoot>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Updated User</th>
-                                <th>Updated</th>
-                                <th>Action</th>
-                            </tr>
-                            </tfoot>
+                        <table class="table table-bordered table-striped table-hover">
                             <tbody>
-                            @foreach($notices as $key=>$notice)
-                            <tr>
-                                <td>{{ $key+1 }}</td>
-                                <td>{{ $notice->name }}</td>
-                                <td>{{ $notice->user->name }}</td>
-                                <td>{{ $notice->updated_at->toFormattedDateString() }}</td>
-                                <td>
-                                    <a class="btn btn-success" href="{{ Storage::disk('public')->url('notices/'.$notice->link) }}" target="_blank">
-                                        <i class="material-icons">visibility</i>
-                                    </a>
-                                    <a class="btn btn-info waves-effect" href="{{ route('admin.notice.edit', $notice->id) }}"><i class="material-icons">edit</i></a>
-                                    <button class="btn btn-danger waves-effect" onclick="deleteNotice({{ $notice->id }})"><i class="material-icons">delete</i></button>
-                                    <form style="display: none" method="POST" action="{{ route('admin.notice.destroy', $notice->id) }}" id="delete-notice-{{ $notice->id }}">@csrf @method('DELETE')</form>
-                                </td>
-                            </tr>
-                                @endforeach
+                                <tr>
+                                    <td>Total People:</td>
+                                    <td>10356500</td>
+                                </tr>
+                                <tr>
+                                    <td>Total People:</td>
+                                    <td>10356500</td>
+                                </tr>
+                                <tr>
+                                    <td>Total People:</td>
+                                    <td>10356500</td>
+                                </tr>
+                                <tr>
+                                    <td>Total People:</td>
+                                    <td>10356500</td>
+                                </tr>
                             </tbody>
                         </table>
+                        <a href="{{ route('moderator.information.edit') }}" class="btn btn-info waves-effect">Edit Information</a>
                     </div>
                 </div>
             </div>
@@ -117,3 +96,4 @@
         }
     </script>
 @endpush
+

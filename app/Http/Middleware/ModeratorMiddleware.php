@@ -18,6 +18,8 @@ class ModeratorMiddleware
     {
         if(Auth::check() and Auth::user()->role->id==2){
             return $next($request);
+        }else{
+            abort(403);
         }
     }
 }

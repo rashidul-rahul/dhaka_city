@@ -21,7 +21,7 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        $notices = Notice::all();
+        $notices = Notice::latest()->get();
         return view('admin.notice.index', compact('notices'));
     }
 
@@ -149,6 +149,11 @@ class NoticeController extends Controller
      */
     public function destroy(Notice $notice)
     {
-        //
+        if(Storage::disk('public')->exists('notices/'.$notice->link)){
+            Storage::disk('public')->delete('notices/'.$notice->link);
+        }
+        $notice->delete();
+        Toastr::success('Notice Deleted', 'Success');
+        return redirect()->back();
     }
 }

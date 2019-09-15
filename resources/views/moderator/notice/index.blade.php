@@ -14,7 +14,7 @@
                 <div class="header">
                     <h2>
                         All Notice
-                        <a href="{{ route('admin.notice.create') }}" class="btn btn-success waves-effect">
+                        <a href="{{ route('moderator.notice.create') }}" class="btn btn-success waves-effect">
                             <i class="material-icons">add</i>
                             <span>Add</span>
                         </a>
@@ -52,9 +52,9 @@
                                     <a class="btn btn-success" href="{{ Storage::disk('public')->url('notices/'.$notice->link) }}" target="_blank">
                                         <i class="material-icons">visibility</i>
                                     </a>
-                                    <a class="btn btn-info waves-effect" href="{{ route('admin.notice.edit', $notice->id) }}"><i class="material-icons">edit</i></a>
-                                    <button class="btn btn-danger waves-effect" onclick="deleteNotice({{ $notice->id }})"><i class="material-icons">delete</i></button>
-                                    <form style="display: none" method="POST" action="{{ route('admin.notice.destroy', $notice->id) }}" id="delete-notice-{{ $notice->id }}">@csrf @method('DELETE')</form>
+                                        <a class="btn btn-info waves-effect" href="{{ route('moderator.notice.edit', $notice->id) }}"><i class="material-icons">edit</i></a>
+                                        <button class="btn btn-danger waves-effect" onclick="deleteNotice({{ $notice->id }})"><i class="material-icons">delete</i></button>
+                                        <form style="display: none" method="POST" action="{{ route('moderator.notice.destroy', $notice->id) }}" id="delete-notice-{{ $notice->id }}">@csrf @method('DELETE')</form>
                                 </td>
                             </tr>
                                 @endforeach

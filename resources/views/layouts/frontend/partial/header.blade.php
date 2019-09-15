@@ -8,12 +8,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logos/logo.png" alt="image"></a>
+                <a class="navbar-brand" href="{{ route('home') }}"><h2 style="color: #1d643b">Capital of Bangladesh</h2></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="{{ Request::is('/') ? 'active':'' }}" href="{{ route('home') }}">Home</a></li>
-                    <li><a href="about-us.html">About us</a></li>
+                    <li><a class="{{ Request::is('about') ? 'active':'' }}" href="{{ route('about') }}">About Dhaka</a></li>
                     <li><a href="services.html">Our Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a class="{{ Request::is('notice') ? 'active':'' }}" href="{{ route('notice') }}">Notice</a></li>
@@ -21,8 +21,8 @@
                         <a href="testimonials.html">Testimonials</a>
                     </li>
                     @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a class="{{ Request::is('login')? 'active': '' }}" href="{{ route('login') }}">Login</a></li>
+                        <li><a class="{{ Request::is('register')? 'active': '' }}" href="{{ route('register') }}">Register</a></li>
                     @else
                         @if(Auth::user()->role->id == 1)
                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>

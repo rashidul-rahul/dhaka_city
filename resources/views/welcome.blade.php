@@ -3,6 +3,15 @@
     {{ 'Dhaka City Corporation' }}
 @endsection
 @push('css')
+    <style>
+        .parallax-back-img{
+            background-image:url('{{ asset('assets/frontend/uploads/dhaka_city/night_Dhaka.jpg') }}');
+        }
+        .size-img{
+            height: 60px;
+            width: 60px;
+        }
+    </style>
 @endpush
 @section('content')
     <div class="slider-area">
@@ -117,34 +126,39 @@
         </div><!-- end container -->
     </div><!-- end section -->
 
-    <div class="parallax section parallax-off" data-stellar-background-ratio="0.9" style="background-image:url('uploads/parallax_04.jpg');">
+    <div class="parallax section parallax-off parallax-back-img" data-stellar-background-ratio="0.9" style="">
         <div class="container">
             <div class="row text-center stat-wrap">
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-briefcase"></i></span>
+                    <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/woman.svg') }}" alt="Women"></span>
                     <p class="stat_count">1200</p>
-                    <h3>Complated Projects</h3>
+                    <h3>Man</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-happy"></i></span>
+                    <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/man.svg') }}" alt="Men"></span>
                     <p class="stat_count">3210</p>
-                    <h3>Happy Clients</h3>
+                    <h3>Women</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-idea"></i></span>
+                    <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/people.svg') }}" alt="People"></span>
                     <p class="stat_count">3781</p>
-                    <h3>Customer Services</h3>
+                    <h3>Total Peoples</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-customer-service"></i></span>
+                    <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/place.svg') }}" alt="Place"></span>
                     <p class="stat_count">4300</p>
-                    <h3>Answered Questions</h3>
+                    <h3>Place to visit</h3>
                 </div><!-- end col -->
             </div><!-- end row -->
         </div><!-- end container -->
+        <br>
+        <br>
+        <div class="text-center">
+            <a data-scroll="" href="{{ route('about') }}" class="btn btn-light btn-radius btn-brd">Know More about Dhaka</a>
+        </div>
     </div><!-- end section -->
 
     <div id="services" class="parallax section lb">
@@ -157,12 +171,15 @@
             <div class="owl-services owl-carousel owl-theme">
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
-                        <a href="uploads/service_01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="uploads/service_01.jpg" alt="" class="img-responsive img-rounded">
+                        <a href="">
+                        <img src="{{ asset('assets/frontend/uploads/service_01.jpg') }}" alt="" class="img-responsive img-rounded">
+                        </a>
                     </div>
                     <div class="service-dit">
+                        <a href="">
                         <h3>Smart Swatch Editions</h3>
                         <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
+                        </a>
                     </div>
                 </div>
                 <!-- end service -->
@@ -212,7 +229,7 @@
         </div><!-- end container -->
     </div><!-- end section -->
 
-    <div class="parallax section noover" data-stellar-background-ratio="0.7" style="background-image:url('uploads/parallax_05.png');">
+    <div class="parallax section noover" data-stellar-background-ratio="0.7" style="background-image:url('{{ asset('assets/frontend/uploads/parallax_05.png') }}');">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-6">
@@ -234,7 +251,8 @@
                     </div>
                 </div>
             </div><!-- end row -->
-        </div><!-- end container -->
+        </div>
+        <!-- end container -->
     </div><!-- end section -->
 
     <div id="features" class="section lb">
