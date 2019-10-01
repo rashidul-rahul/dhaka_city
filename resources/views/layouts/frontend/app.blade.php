@@ -17,6 +17,7 @@
 <!-- Site Icons -->
 <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon" />
 <link rel="apple-touch-icon" href="{{ asset('assets/frontend/images/apple-touch-icon.png') }}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{{ asset('assets/toastr.min.css') }}">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
@@ -43,7 +44,7 @@
 @include('layouts.frontend.partial.preLoader')
 <!-- END LOADER -->
 
-@include('layouts.frontend.partial.topBar')
+{{--@include('layouts.frontend.partial.topBar')--}}
 @include('layouts.frontend.partial.header')
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Notice')
+@section('title', 'Information')
 
 @push('css')
     <link href="{{ asset('assets/backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
@@ -13,31 +13,32 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                       Information
+                        Information
                     </h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover">
                             <tbody>
-                                <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
-                                </tr>
-                                <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
-                                </tr>
-                                <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
-                                </tr>
-                                <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
-                                </tr>
+                            <tr>
+                                <td>Total Man:</td>
+                                <td>{{ $information->man }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Woman:</td>
+                                <td>{{ $information->woman }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total People:</td>
+                                <td>{{ $information->people }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Place:</td>
+                                <td>{{ $information->place }}</td>
+                            </tr>
                             </tbody>
                         </table>
+                        <a href="{{ route('admin.information.edit') }}" class="btn btn-info waves-effect">Edit Information</a>
                     </div>
                 </div>
             </div>
@@ -95,3 +96,4 @@
         }
     </script>
 @endpush
+

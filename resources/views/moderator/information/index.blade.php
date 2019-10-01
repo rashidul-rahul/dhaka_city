@@ -21,20 +21,20 @@
                         <table class="table table-bordered table-striped table-hover">
                             <tbody>
                                 <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
+                                    <td>Total Man:</td>
+                                    <td>{{ $information->man }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Woman:</td>
+                                    <td>{{ $information->woman }}</td>
                                 </tr>
                                 <tr>
                                     <td>Total People:</td>
-                                    <td>10356500</td>
+                                    <td>{{ $information->people }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
-                                </tr>
-                                <tr>
-                                    <td>Total People:</td>
-                                    <td>10356500</td>
+                                    <td>Total Place:</td>
+                                    <td>{{ $information->place }}</td>
                                 </tr>
                             </tbody>
                         </table>

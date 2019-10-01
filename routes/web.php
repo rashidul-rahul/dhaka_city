@@ -27,8 +27,9 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middlewa
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('category', 'CategoryController');
     Route::resource('notice', 'NoticeController');
-//    Route::get('information', 'InformationController')->name('information.index');
-//    Route::post('information/{}/edit', 'InformationController@edit')->name('information.edit');
+    Route::get('information', 'InformationController@index')->name('information.index');
+    Route::get('information/edit', 'InformationController@edit')->name('information.edit');
+    Route::post('information/update', 'InformationController@update')->name('information.update');
 });
 
 //moderator route group

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Moderator;
 
 use App\Information;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class InformationController extends Controller
 {
     public function index(){
-        return view('moderator.information.index');
+        $information = Information::find(1);
+        return view('moderator.information.index', compact('information'));
     }
 
     public function edit(){
@@ -20,12 +22,20 @@ class InformationController extends Controller
     public function update(Request $request){
         $information = Information::find(1);
         $this->validate($request, [
-            'man'=>'required|number',
-            'woman'=>'required|number',
-            'people'=>'required|number',
-            'place'=>'required|number',
+            'man'=>'required|numeric',
+            'woman'=>'required|numeric',
+            'people'=>'required|numeric',
+            'place'=>'required|numeric',
 
         ]);
+        $information->man = $request->man;
+        $information->woman = $request->woman;
+        $information->people = $request->people;
+        $information->place = $request->place;
+        $information->save();
+        Toastr::success('Information Updated', 'Success');
+        return redirect()->route('moderator.information.index');
+
 
     }
 }

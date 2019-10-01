@@ -55,6 +55,12 @@
                             <span>Notice</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('admin/information*') ? 'active':'' }}">
+                        <a href="{{ route('admin.information.index') }}">
+                            <i class="material-icons">save</i>
+                            <span>Information</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();

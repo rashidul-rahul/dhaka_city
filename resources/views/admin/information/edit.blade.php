@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title', 'Notice')
+@section('title', 'Information')
 
 @push('css')
     <link href="{{ asset('assets/backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}" rel="stylesheet">
@@ -14,23 +14,34 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        {{ $notice->name }}
+                        Information Edit
                     </h2>
                 </div>
                 <div class="body">
-                    <form method="POST" action="{{ route('admin.notice.update', $notice->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.information.update') }}" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
-                        <label for="name">Name</label>
+                        <label for="man">Total Man</label>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" id="name" name="name" class="form-control" value="{{ $notice->name }}">
+                                <input type="number" id="man" name="man" class="form-control" value="{{ $information->man }}">
                             </div>
                         </div>
-                        <label for="pdf">Notice pdf File <small>(*Support only pdf)</small></label>
+                        <label for="woman">Total Woman</label>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="file" id="pdf" name="pdf" class="form-control" placeholder="Enter Notice file">
+                                <input type="number" id="woman" name="woman" class="form-control" value="{{ $information->woman }}">
+                            </div>
+                        </div>
+                        <label for="people">Total People</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="number" id="people" name="people" class="form-control" value="{{ $information->people }}">
+                            </div>
+                        </div>
+                        <label for="place">Visiting place</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input type="number" id="place" name="place" class="form-control" value="{{ $information->place }}">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">Update</button>

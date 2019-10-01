@@ -35,30 +35,21 @@
                     <table class="table bg-light">
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Download</th>
+                            <th scope="col">Serial</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">View</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        @foreach($notices as $key=>$notice)
+                            <tr>
+                                <th scope="row">{{ $key+1 }}</th>
+                                <td>{{ $notice->name }}</td>
+                                <td>{{ $notice->created_at->toFormattedDateString() }}</td>
+                                <td><a class="btn btn-success" href="{{ Storage::disk('public')->url('notices/'.$notice->link) }}"><i class="material-icons">visibility</i></a></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

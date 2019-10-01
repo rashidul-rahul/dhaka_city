@@ -131,25 +131,25 @@
             <div class="row text-center stat-wrap">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/woman.svg') }}" alt="Women"></span>
-                    <p class="stat_count">1200</p>
+                    <p class="stat_count">{{ $information->woman }}</p>
                     <h3>Man</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/man.svg') }}" alt="Men"></span>
-                    <p class="stat_count">3210</p>
+                    <p class="stat_count">{{ $information->man }}</p>
                     <h3>Women</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/people.svg') }}" alt="People"></span>
-                    <p class="stat_count">3781</p>
+                    <p class="stat_count">{{ $information->people }}</p>
                     <h3>Total Peoples</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/place.svg') }}" alt="Place"></span>
-                    <p class="stat_count">4300</p>
+                    <p class="stat_count">{{ $information->place }}</p>
                     <h3>Place to visit</h3>
                 </div><!-- end col -->
             </div><!-- end row -->

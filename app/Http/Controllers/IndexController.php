@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Information;
+use App\Notice;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index(){
-        return view('welcome');
+        $information = Information::find(1);
+        return view('welcome', compact('information'));
     }
 
     public function notice(){
-        return view('notice');
+        $notices = Notice::all();
+        return view('notice', compact('notices'));
     }
     public function about(){
         return view('about');
