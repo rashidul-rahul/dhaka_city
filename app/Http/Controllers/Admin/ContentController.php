@@ -1,0 +1,122 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Category;
+use App\Notice;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+
+class ContentController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('admin.content.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $categories = Category::all();
+        return view('admin.content.create', compact('categories'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name'=>'required|string',
+            'image'=>'required|mimes:png,jpg,jpeg',
+            'content'=>"required|string",
+            'category_id'=>'required',
+        ]);
+
+        $image = $request->image;
+        $slug = Str::slug($request->name, '-');
+        if(isset($image)){
+            $currentDateTime = Carbon::now()->toDateString();
+            $imageName = $slug.'-'.$currentDateTime.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+
+            if(!Storage::disk('public')->exists('contents')){
+                Storage::disk('public')->makeDirectory('contents');
+            }
+
+            Storage::disk('public')->put('contents/'.$imageName, file_get_contents($image));
+            $link = $imageName;
+        } else {
+            $link = "No_image";
+        }
+        $content = new Content();
+        $content->name = $request->name;
+        $content->image = $link;
+        $content->content = $request->content;
+        $content->category_id = $request->category_id;
+        $content->save();
+        Toastr::success('Content Uploaded', 'Success');
+        return redirect()->route('admin.content.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Content  $content
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Content $content)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Content  $content
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Content $content)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Content  $content
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Content $content)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Content  $content
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Content $content)
+    {
+        //
+    }
+}

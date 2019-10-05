@@ -11,6 +11,24 @@
             height: 60px;
             width: 60px;
         }
+        .slider-bg-one {
+            background-image: url("{{ asset('assets/frontend/uploads/slider_01.jpg') }}");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .slider-bg-two {
+            background-image: url("{{ asset('assets/frontend/uploads/slider_02.jpg') }}");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .slider-bg-three {
+            background-image: url("{{ asset('assets/frontend/uploads/slider_03.jpg') }}");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 @endpush
 @section('content')
@@ -66,19 +84,6 @@
             </div>
         </div>
     </div>
-    <!--some work-->
-    <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </div>
-    <!-- end some work-->
     <div id="about" class="section wb">
         <div class="container">
             <div class="row">
@@ -131,25 +136,43 @@
             <div class="row text-center stat-wrap">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/woman.svg') }}" alt="Women"></span>
-                    <p class="stat_count">{{ $information->woman }}</p>
+                    <p class="stat_count">
+                        @if($information == null)
+                            {{ 100 }}
+                            @else
+                        {{ $information->man }}
+                            @endif
+                    </p>
                     <h3>Man</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/man.svg') }}" alt="Men"></span>
-                    <p class="stat_count">{{ $information->man }}</p>
+                    <p class="stat_count">@if($information == null)
+                            {{ 100 }}
+                        @else
+                            {{ $information->woman }}
+                        @endif</p>
                     <h3>Women</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/people.svg') }}" alt="People"></span>
-                    <p class="stat_count">{{ $information->people }}</p>
+                    <p class="stat_count">@if($information == null)
+                            {{ 100 }}
+                        @else
+                            {{ $information->people }}
+                        @endif</p>
                     <h3>Total Peoples</h3>
                 </div><!-- end col -->
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <span data-scroll class="global-radius icon_wrap effect-1"><img class="size-img" src="{{ asset('assets/frontend/icons/place.svg') }}" alt="Place"></span>
-                    <p class="stat_count">{{ $information->place }}</p>
+                    <p class="stat_count">@if($information == null)
+                            {{ 100 }}
+                        @else
+                            {{ $information->place }}
+                        @endif</p>
                     <h3>Place to visit</h3>
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -164,8 +187,9 @@
     <div id="services" class="parallax section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Our Service</h3>
-                <p class="lead">Our Service unlimited solutions to all your business needs. in the installation package we prepare search engine optimization, social media support, we provide corporate identity and graphic design services.</p>
+                <h3>Emergency Service</h3>
+                <p class="lead">All emergency serrvice can get in one number: <b>999</b></p>
+                <p>You get these three 24/7 Serevice</p>
             </div><!-- end title -->
 
             <div class="owl-services owl-carousel owl-theme">
@@ -176,21 +200,19 @@
                         </a>
                     </div>
                     <div class="service-dit">
-                        <a href="">
-                        <h3>Smart Swatch Editions</h3>
+                        <h3>Ambulance</h3>
                         <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
-                        </a>
                     </div>
                 </div>
                 <!-- end service -->
 
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
-                        <a href="uploads/service_02.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="uploads/service_02.jpg" alt="" class="img-responsive img-rounded">
+                        <a href="{{ asset('assets/frontend/uploads/service_02.jpg') }}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{{ asset('assets/frontend/uploads/service_02.jpg') }}" alt="" class="img-responsive img-rounded">
                     </div>
                     <div class="service-dit">
-                        <h3>Web UI Kit Design</h3>
+                        <h3>Police</h3>
                         <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
                     </div>
                 </div>
@@ -198,34 +220,18 @@
 
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
-                        <a href="uploads/service_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="uploads/service_03.jpg" alt="" class="img-responsive img-rounded">
+{{--                        <a href="{{ asset('assets/frontend/uploads/service_03.jpg') }}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>--}}
+                        <img src="{{ asset('assets/frontend/uploads/service_03.jpg') }}" alt="" class="img-responsive img-rounded">
                     </div>
                     <div class="service-dit">
-                        <h3>Mobile Optimization</h3>
+                        <h3>Fire Service</h3>
                         <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis accumsan.</p>
-                    </div>
-                </div>
-                <!-- end service -->
-
-                <div class="service-widget">
-                    <div class="post-media wow fadeIn">
-                        <a href="uploads/service_04.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="uploads/service_04.jpg" alt="" class="img-responsive img-rounded">
-                    </div>
-                    <div class="service-dit">
-                        <h3>Digital Design for Mac</h3>
-                        <p>Praesent in neque congue sapien lobortis faucibus id eget erat. <br>Pellentesque maximus rutrum felis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
                     </div>
                 </div>
                 <!-- end service -->
             </div><!-- end row -->
 
             <hr class="hr1">
-
-            <div class="text-center">
-                <a data-scroll href="#portfolio" class="btn btn-light btn-radius btn-brd">View Our Portfolio</a>
-            </div>
         </div><!-- end container -->
     </div><!-- end section -->
 
@@ -247,7 +253,7 @@
                 </div><!-- end col -->
                 <div class="col-md-6">
                     <div class="text-center image-center hidden-sm hidden-xs">
-                        <img src="uploads/device_03.png" alt="" class="img-responsive wow fadeInUp">
+                        <img src="{{ asset('assets/frontend/uploads/device_03.png') }}" alt="" class="img-responsive wow fadeInUp">
                     </div>
                 </div>
             </div><!-- end row -->
@@ -258,8 +264,8 @@
     <div id="features" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Features & Overviews</h3>
-                <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, <br>lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                <h3>Future Mobile App</h3>
+                <p class="lead">We are going to developing our mobile application for dhaka city</p>
             </div><!-- end title -->
 
             <div class="row">
@@ -268,63 +274,63 @@
                         <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                             <i class="flaticon-wordpress-logo"></i>
                             <div class="fl-inner">
-                                <h4>WordPress Installation</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                         <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
                             <i class="flaticon-windows"></i>
                             <div class="fl-inner">
-                                <h4>Browser Compatible</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                         <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.4s">
                             <i class="flaticon-price-tag"></i>
                             <div class="fl-inner">
-                                <h4>eCommerce Ready</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                         <li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
                             <i class="flaticon-new-file"></i>
                             <div class="fl-inner">
-                                <h4>Easy to Customize</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-4 hidden-xs hidden-sm">
-                    <img src="uploads/ipad.png" class="img-center img-responsive" alt="">
+                    <img src="{{ asset('assets/frontend/uploads/ipad.png') }}" class="img-center img-responsive" alt="">
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <ul class="features-right">
                         <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                             <i class="flaticon-pantone"></i>
                             <div class="fr-inner">
-                                <h4>Limitless Colors</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                         <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
                             <i class="flaticon-cloud-computing"></i>
                             <div class="fr-inner">
-                                <h4>Lifetime Update</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                         <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.4s">
                             <i class="flaticon-line-graph"></i>
                             <div class="fr-inner">
-                                <h4>SEO Friendly</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>
                         <li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                             <i class="flaticon-coding"></i>
                             <div class="fr-inner">
-                                <h4>Simple Clean Code</h4>
+                                <h4>{{ $feature }}</h4>
                                 <p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. </p>
                             </div>
                         </li>

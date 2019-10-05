@@ -61,6 +61,12 @@
                             <span>Information</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('admin/content*') ? 'active':'' }}">
+                        <a href="{{ route('admin.content.index') }}">
+                            <i class="material-icons">widgets</i>
+                            <span>Contents</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();
@@ -91,6 +97,12 @@
                         <a href="{{ route('moderator.information.index') }}">
                             <i class="material-icons">save</i>
                             <span>Information</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('moderator/content*') ? 'active':'' }}">
+                        <a href="{{ route('moderator.content.index') }}">
+                            <i class="material-icons">widgets</i>
+                            <span>Contents</span>
                         </a>
                     </li>
                     <li class="header">Settings</li>

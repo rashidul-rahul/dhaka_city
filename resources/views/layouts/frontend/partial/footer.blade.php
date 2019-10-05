@@ -4,29 +4,29 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <img src="images/logos/logo-2.png" alt="" />
+                        <h3>Dhaka City Corporation</h3>
                     </div>
                     <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
                     <p>Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
                 </div><!-- end clearfix -->
             </div><!-- end col -->
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="widget clearfix">
-                    <div class="widget-title">
-                        <h3>Pages</h3>
-                    </div>
+{{--            <div class="col-md-4 col-sm-4 col-xs-12">--}}
+{{--                <div class="widget clearfix">--}}
+{{--                    <div class="widget-title">--}}
+{{--                        <h3>Pages</h3>--}}
+{{--                    </div>--}}
 
-                    <ul class="footer-links hov">
-                        <li><a href="#">Home <span class="icon icon-arrow-right2"></span></a></li>
-                        <li><a href="#">Blog <span class="icon icon-arrow-right2"></span></a></li>
-                        <li><a href="#">Pricing <span class="icon icon-arrow-right2"></span></a></li>
-                        <li><a href="#">About <span class="icon icon-arrow-right2"></span></a></li>
-                        <li><a href="#">Faq <span class="icon icon-arrow-right2"></span></a></li>
-                        <li><a href="#">Contact <span class="icon icon-arrow-right2"></span></a></li>
-                    </ul><!-- end links -->
-                </div><!-- end clearfix -->
-            </div><!-- end col -->
+{{--                    <ul class="footer-links hov">--}}
+{{--                        <li><a href="#">Home <span class="icon icon-arrow-right2"></span></a></li>--}}
+{{--                        <li><a href="#">Blog <span class="icon icon-arrow-right2"></span></a></li>--}}
+{{--                        <li><a href="#">Pricing <span class="icon icon-arrow-right2"></span></a></li>--}}
+{{--                        <li><a href="#">About <span class="icon icon-arrow-right2"></span></a></li>--}}
+{{--                        <li><a href="#">Faq <span class="icon icon-arrow-right2"></span></a></li>--}}
+{{--                        <li><a href="#">Contact <span class="icon icon-arrow-right2"></span></a></li>--}}
+{{--                    </ul><!-- end links -->--}}
+{{--                </div><!-- end clearfix -->--}}
+{{--            </div><!-- end col -->--}}
 
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="footer-distributed widget clearfix">
@@ -51,10 +51,8 @@
     <div class="container">
         <div class="footer-distributed">
             <div class="footer-left">
-                <p class="footer-company-name">All Rights Reserved. &copy; 2019 Design and Developed for : Daffodil International University Final Project
+                <p class="footer-company-name">All Rights Reserved. &copy; 2019 Design and Developed by Atikur Rahman & Riad : Daffodil International University Final Project
             </div>
-
-
         </div>
     </div><!-- end container -->
 </div><!-- end copyrights -->
