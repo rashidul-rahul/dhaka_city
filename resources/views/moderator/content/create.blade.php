@@ -7,7 +7,6 @@
 @endpush
 
 @section('content')
-
             <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -18,7 +17,7 @@
                             </h2>
                         </div>
                         <div class="body">
-                            <form method="POST" action="{{ route('admin.content.store') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('moderator.content.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <label for="name">Name</label>
                                 <div class="form-group">

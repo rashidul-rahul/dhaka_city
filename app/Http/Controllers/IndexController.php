@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Content;
 use App\Information;
 use App\Notice;
 use Illuminate\Http\Request;
@@ -20,5 +22,10 @@ class IndexController extends Controller
     }
     public function about(){
         return view('about');
+    }
+    public function information(){
+        $contents = Content::all();
+        $categories = Category::all();
+        return view('information', compact('contents', 'categories'));
     }
 }

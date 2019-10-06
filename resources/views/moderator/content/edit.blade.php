@@ -18,7 +18,7 @@
                     </h2>
                 </div>
                 <div class="body">
-                    <form method="POST" action="{{ route('admin.content.update', $content->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('moderator.content.update', $content->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <label for="name">Name</label>

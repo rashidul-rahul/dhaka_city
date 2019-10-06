@@ -14,7 +14,7 @@
                 <div class="header">
                     <h2>
                         All Content
-                        <a href="{{ route('admin.content.create') }}" class="btn btn-success waves-effect">
+                        <a href="{{ route('moderator.content.create') }}" class="btn btn-success waves-effect">
                             <i class="material-icons">add</i>
                             <span>Add</span>
                         </a>
@@ -46,12 +46,12 @@
                                 <td>{{ $content->name }}</td>
                                 <td>{{ $content->created_at->toFormattedDateString() }}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{{ route('admin.content.show', $content->id) }}">
+                                    <a class="btn btn-success" href="{{ route('moderator.content.show', $content->id) }}">
                                         <i class="material-icons">visibility</i>
                                     </a>
-                                    <a class="btn btn-info waves-effect" href="{{ route('admin.content.edit', $content->id) }}"><i class="material-icons">edit</i></a>
+                                    <a class="btn btn-info waves-effect" href="{{ route('moderator.content.edit', $content->id) }}"><i class="material-icons">edit</i></a>
                                     <button class="btn btn-danger waves-effect" onclick="deleteContent({{ $content->id }})"><i class="material-icons">delete</i></button>
-                                    <form style="display: none" method="POST" action="{{ route('admin.content.destroy', $content->id) }}" id="delete-content-{{ $content->id }}">@csrf @method('DELETE')</form>
+                                    <form style="display: none" method="POST" action="{{ route('moderator.content.destroy', $content->id) }}" id="delete-content-{{ $content->id }}">@csrf @method('DELETE')</form>
                                 </td>
                             </tr>
                                 @endforeach

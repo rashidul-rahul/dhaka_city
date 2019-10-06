@@ -47,7 +47,7 @@
                                 <th scope="row">{{ $key+1 }}</th>
                                 <td>{{ $notice->name }}</td>
                                 <td>{{ $notice->created_at->toFormattedDateString() }}</td>
-                                <td><a class="btn btn-success" href="{{ Storage::disk('public')->url('notices/'.$notice->link) }}"><i class="material-icons">visibility</i></a></td>
+                                <td><a target="_blank" class="btn btn-success" href="{{ Storage::disk('public')->url('notices/'.$notice->link) }}"><i class="material-icons">visibility</i></a></td>
                             </tr>
                         @endforeach
                         </tbody>

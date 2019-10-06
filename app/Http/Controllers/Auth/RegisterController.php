@@ -29,18 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected function authenticated(Request $request, $user)
-    {
-        if ( $user->role->id == 1 ) {
-            return redirect()->route('admin.dashboard');
-        } elseif ($user->role->id ==2){
-            return redirect()->route('moderator.dashboard');
-        }elseif ($user->role->id == 3){
-            return redirect()->route('user.dashboard');
-        }
-
-        return redirect('/home');
-    }
+    protected $redirectTo = '/user/dashboard';
 
     /**
      * Create a new controller instance.
@@ -64,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'about' => ['string'],
         ]);
     }
 
@@ -79,6 +69,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'about' => $data['about'],
+            'role_id' => 3
         ]);
     }
 }

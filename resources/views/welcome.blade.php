@@ -12,19 +12,19 @@
             width: 60px;
         }
         .slider-bg-one {
-            background-image: url("{{ asset('assets/frontend/uploads/slider_01.jpg') }}");
+            background-image: url("{{ asset('assets/frontend/uploads/dhaka_city/dhaka1.jpg') }}");
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
         }
         .slider-bg-two {
-            background-image: url("{{ asset('assets/frontend/uploads/slider_02.jpg') }}");
+            background-image: url("{{ asset('assets/frontend/uploads/dhaka_city/dhaka2.jpg') }}");
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
         }
         .slider-bg-three {
-            background-image: url("{{ asset('assets/frontend/uploads/slider_03.jpg') }}");
+            background-image: url("{{ asset('assets/frontend/uploads/dhaka_city/dhaka3.jpg') }}");
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -34,17 +34,13 @@
 @section('content')
     <div class="slider-area">
         <div class="slider-wrapper owl-carousel">
-            <div class="slider-item home-one-slider-otem slider-item-four slider-bg-one">
+            <div class="slider-item text-center home-one-slider-otem slider-item-four slider-bg-one">
                 <div class="container">
                     <div class="row">
                         <div class="slider-content-area">
                             <div class="slide-text">
-                                <h1 class="homepage-three-title">Outstanding <span>Installation</span> Services</h1>
+                                <h1 class="homepage-three-title">Dhaka <span>The City of</span> Mosque</h1>
                                 <h2>With GoodWEB Solutions responsive landing page template, <br>you can promote your all web design & development services. </h2>
-                                <div class="slider-content-btn">
-                                    <a class="button btn btn-light btn-radius btn-brd" href="#">Read More</a>
-                                    <a class="button btn btn-light btn-radius btn-brd" href="#">Contact</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -55,7 +51,7 @@
                     <div class="row">
                         <div class="slider-content-area">
                             <div class="slide-text">
-                                <h1 class="homepage-three-title">Outstanding <span>Installation</span> Services</h1>
+                                <h1 class="homepage-three-title">2 <span>Installation</span> Services</h1>
                                 <h2>With GoodWEB Solutions responsive landing page template, <br>you can promote your all web design & development services. </h2>
                                 <div class="slider-content-btn">
                                     <a class="button btn btn-light btn-radius btn-brd" href="#">Read More</a>
@@ -71,12 +67,8 @@
                     <div class="row">
                         <div class="slider-content-area">
                             <div class="slide-text">
-                                <h1 class="homepage-three-title">Outstanding <span>Installation</span> Services</h1>
+                                <h1 class="homepage-three-title">3 <span>Installation</span> Services</h1>
                                 <h2>With GoodWEB Solutions responsive landing page template, <br>you can promote your all web design & development services.</h2>
-                                <div class="slider-content-btn">
-                                    <a class="button btn btn-light btn-radius btn-brd" href="#">Read More</a>
-                                    <a class="button btn btn-light btn-radius btn-brd" href="#">Contact</a>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -89,8 +81,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="message-box">
-                        <h4>About Us</h4>
-                        <h2>Welcome to GoodWEB Solutions</h2>
+                        <h4>City Mayor Speech</h4>
+                        <h2>Welcome to Dhaka City</h2>
                         <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
 
                         <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
@@ -101,8 +93,7 @@
 
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn">
-                        <img src="uploads/about_01.jpg" alt="" class="img-responsive img-rounded">
-                        <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                        <img src="{{ asset('assets/frontend/uploads/dhaka_city/images.jpeg') }}" alt="" class="img-responsive img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
             </div><!-- end row -->
@@ -112,14 +103,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="post-media wow fadeIn">
-                        <img src="uploads/about_02.jpg" alt="" class="img-responsive img-rounded">
+                        <img src="{{ asset('assets/frontend/uploads/about_02.jpg') }}" alt="" class="img-responsive img-rounded">
                     </div><!-- end media -->
                 </div><!-- end col -->
 
                 <div class="col-md-6">
                     <div class="message-box">
-                        <h4>Who We are</h4>
-                        <h2>We Are GoodWEB Solutions</h2>
+                        <h4>Quick Links</h4>
+                        <h2>Here found some link of Bangladesh Government Service</h2>
                         <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
 
                         <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
@@ -196,7 +187,7 @@
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
                         <a href="">
-                        <img src="{{ asset('assets/frontend/uploads/service_01.jpg') }}" alt="" class="img-responsive img-rounded">
+                        <img src="{{ asset('assets/frontend/uploads/dhaka_city/ambulance.jpeg') }}" alt="" class="img-responsive img-rounded">
                         </a>
                     </div>
                     <div class="service-dit">
@@ -208,8 +199,7 @@
 
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
-                        <a href="{{ asset('assets/frontend/uploads/service_02.jpg') }}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{{ asset('assets/frontend/uploads/service_02.jpg') }}" alt="" class="img-responsive img-rounded">
+                        <img src="{{ asset('assets/frontend/uploads/dhaka_city/police_bangla.jpg') }}" alt="" class="img-responsive img-rounded">
                     </div>
                     <div class="service-dit">
                         <h3>Police</h3>
@@ -221,7 +211,7 @@
                 <div class="service-widget">
                     <div class="post-media wow fadeIn">
 {{--                        <a href="{{ asset('assets/frontend/uploads/service_03.jpg') }}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>--}}
-                        <img src="{{ asset('assets/frontend/uploads/service_03.jpg') }}" alt="" class="img-responsive img-rounded">
+                        <img src="{{ asset('assets/frontend/uploads/dhaka_city/fire.jpg') }}" alt="" class=" img-rounded">
                     </div>
                     <div class="service-dit">
                         <h3>Fire Service</h3>
@@ -240,20 +230,14 @@
             <div class="row text-center">
                 <div class="col-md-6">
                     <div class="customwidget text-left">
-                        <h1>Beautiful Websites</h1>
-                        <p>Full access control of the background parallax effects, <br>change your awesome background elements and edit colors from style.css or colors.css</p>
-                        <ul class="list-inline">
-                            <li><i class="fa fa-check"></i> Custom Sections</li>
-                            <li><i class="fa fa-check"></i> Parallax's</li>
-                            <li><i class="fa fa-check"></i> Icons & PSD</li>
-                            <li><i class="fa fa-check"></i> Limitless Colors</li>
-                        </ul><!-- end list -->
-                        <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd">Learn More</a>
+                        <h1>Speech of Dhaka Police</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, quas. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti magnam obcaecati suscipit temporibus voluptas.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis harum iure nam officiis ratione sit soluta voluptatibus. Doloribus facilis, nisi!</p>
                     </div>
                 </div><!-- end col -->
                 <div class="col-md-6">
                     <div class="text-center image-center hidden-sm hidden-xs">
-                        <img src="{{ asset('assets/frontend/uploads/device_03.png') }}" alt="" class="img-responsive wow fadeInUp">
+                        <img src="{{ asset('assets/frontend/uploads/dhaka_city/poloce.jpg') }}" alt="" class="img-responsive wow fadeInUp">
                     </div>
                 </div>
             </div><!-- end row -->

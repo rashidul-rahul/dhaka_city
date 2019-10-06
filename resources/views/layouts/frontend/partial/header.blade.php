@@ -14,11 +14,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="{{ Request::is('/') ? 'active':'' }}" href="{{ route('home') }}">Home</a></li>
                     <li><a class="{{ Request::is('about') ? 'active':'' }}" href="{{ route('about') }}">About Dhaka</a></li>
-                    <li><a href="services.html">Our Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+{{--                    <li><a href="services.html">Our Services</a></li>--}}
+                    <li><a class="{{ Request::is('information') ? 'active':'' }}" href="{{ route('information') }}">Information</a></li>
                     <li><a class="{{ Request::is('notice') ? 'active':'' }}" href="{{ route('notice') }}">Notice</a></li>
                     <li>
-                        <a href="testimonials.html">Testimonials</a>
+{{--                        <a href="testimonials.html">Testimonials</a>--}}
                     </li>
                     @guest
                         <li><a class="{{ Request::is('login')? 'active': '' }}" href="{{ route('login') }}">Login</a></li>
