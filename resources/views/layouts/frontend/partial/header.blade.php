@@ -31,6 +31,14 @@
                             @elseif(Auth::user()->role->id == 3)
                             <li><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
                             @endif
+                            <li><a href="javascript:void(0);" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                            </li>
+                            <form id="logout-form" style="display: none;" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                            </form>
                     @endguest
                 </ul>
             </div>
