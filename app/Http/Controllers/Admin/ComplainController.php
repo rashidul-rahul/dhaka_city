@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Complain;
 use Brian2694\Toastr\Facades\Toastr;
-use DemeterChain\C;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
 
 class ComplainController extends Controller
 {
@@ -18,6 +16,8 @@ class ComplainController extends Controller
      */
     public function index()
     {
+        $complains = Complain::latest()->get();
+        return view('admin.complain.index', compact('complains'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ComplainController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -38,27 +38,7 @@ class ComplainController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'string',
-            'email' => 'email',
-            'complain' =>'string|required'
-        ]);
-        $complain = new Complain();
-        if ($request->name == null){
-            $complain->name = Auth::user()->name;
-        }else{
-            $complain->name = $request->name;
-        }
-        if ($request->email == null){
-            $complain->email = Auth::user()->email;
-        }else{
-            $complain->email = $request->email;
-        }
-
-        $complain->complain = $request->complain;
-        $complain->save();
-        Toastr::success('Compalain Submitted. We will take action very soon', 'Success');
-        return redirect()->route('home');
+        //
     }
 
     /**
@@ -69,7 +49,7 @@ class ComplainController extends Controller
      */
     public function show(Complain $complain)
     {
-
+        return view('admin.complain.show', compact('complain'));
     }
 
     /**
@@ -103,6 +83,8 @@ class ComplainController extends Controller
      */
     public function destroy(Complain $complain)
     {
-        //
+        $complain->delete();
+        Toastr::success('Complain Deleted', 'Success');
+        return redirect()->back();
     }
 }

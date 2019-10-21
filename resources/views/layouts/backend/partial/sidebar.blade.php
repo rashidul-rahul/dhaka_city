@@ -67,6 +67,12 @@
                             <span>Contents</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('admin/complain*') ? 'active':'' }}">
+                        <a href="{{ route('admin.complain.index') }}">
+                            <i class="material-icons">record_voice_over</i>
+                            <span>Complains</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();
@@ -103,6 +109,12 @@
                         <a href="{{ route('moderator.content.index') }}">
                             <i class="material-icons">widgets</i>
                             <span>Contents</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('moderator/complain*') ? 'active':'' }}">
+                        <a href="{{ route('moderator.complain.index') }}">
+                            <i class="material-icons">record_voice_over</i>
+                            <span>Complains</span>
                         </a>
                     </li>
                     <li class="header">Settings</li>
