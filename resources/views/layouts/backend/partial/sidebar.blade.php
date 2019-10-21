@@ -73,6 +73,12 @@
                             <span>Complains</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('admin/user*') ? 'active':'' }}">
+                        <a href="{{ route('admin.user.index') }}">
+                            <i class="material-icons">people</i>
+                            <span>Users</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();

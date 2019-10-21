@@ -31,6 +31,7 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middlewa
     Route::get('information/edit', 'InformationController@edit')->name('information.edit');
     Route::post('information/update', 'InformationController@update')->name('information.update');
     Route::resource('complain', 'ComplainController');
+    Route::resource('user', 'UserController');
 });
 
 //moderator route group
