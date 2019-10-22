@@ -14,10 +14,6 @@
                 <div class="header">
                     <h2>
                         All User
-                        <a href="{{ route('admin.user.create') }}" class="btn btn-success waves-effect">
-                            <i class="material-icons">add</i>
-                            <span>Add</span>
-                        </a>
                     </h2>
                 </div>
                 <div class="body">
@@ -52,29 +48,9 @@
                                 <td>{{ $user->role->name }}</td>
                                 <td>{{ $user->created_at == null ? '':$user->created_at->toFormattedDateString() }}</td>
                                 <td>
-                                    <button onclick="{{ $user->role_id == 1? "":"event.preventDefault();
-                                                     document.getElementById('admin-form').submit();" }}" class="btn btn-info waves-effect {{ $user->role_id == 1? 'disabled':'' }}" href="">Admin</button>
-                                    <form id="admin-form" style="display: none;" action="{{ route('admin.user.role') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" value="{{ $user->id }}" name="userId">
-                                        <input type="hidden" value="1" name="role">
-                                    </form>
-                                    <button onclick="{{ $user->role_id == 2? "":"event.preventDefault();
-                                                     document.getElementById('moderator-form').submit();" }}" class="btn btn-info waves-effect {{ $user->role_id == 2? 'disabled':'' }}" href="">Moderator</button>
-                                    <form id="moderator-form" style="display: none;" action="{{ route('admin.user.role') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" value="{{ $user->id }}" name="userId">
-                                        <input type="hidden" value="2" name="role">
-                                    </form>
-                                    <button onclick="{{ $user->role_id == 3? "":"event.preventDefault();
-                                                     document.getElementById('user-form').submit();" }}" class="btn btn-info waves-effect {{ $user->role_id == 3? 'disabled':'' }}" href="">User</button>
-                                    <form id="user-form" style="display: none;" action="{{ route('admin.user.role') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" value="{{ $user->id }}" name="userId">
-                                        <input type="hidden" value="3" name="role">
-                                    </form>
+                                    <a href="{{ route('moderator.user.show', $user->id) }}" class="btn btn-info waves-effect"><i class="material-icons">visibility</i></a>
                                     <button class="btn btn-danger waves-effect" onclick="deleteUser({{ $user->id }})"><i class="material-icons">delete</i></button>
-                                    <form style="display: none" method="POST" action="{{ route('admin.user.destroy', $user->id) }}" id="delete-user-{{ $user->id }}">@csrf @method('DELETE')</form>
+                                    <form style="display: none" method="POST" action="{{ route('moderator.user.destroy', $user->id) }}" id="delete-user-{{ $user->id }}">@csrf @method('DELETE')</form>
                                 </td>
                             </tr>
                                 @endforeach

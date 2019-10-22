@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Moderator;
 
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -17,8 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->get();
-        return view("admin.user.index", compact('users'));
+        $users = User::where('role_id', 3)->get();
+        return view('moderator.user.index', compact('users'));
     }
 
     /**
@@ -50,7 +49,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('moderator.user.show', compact('user'));
     }
 
     /**
@@ -76,19 +75,6 @@ class UserController extends Controller
         //
     }
 
-    public function update_role(Request $request){
-        if(Auth::user()->id == 1){
-            $user = User::find($request->userId);
-            $user->role_id = $request->role;
-            $user->save();
-            Toastr::Success('Permission Updated', 'Success');
-            return redirect()->route('admin.user.index');
-        }else{
-            Toastr::error('You don not have permission', 'Error');
-            return redirect()->route()->back();
-        }
-    }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -97,8 +83,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->delete();
-        Toastr::success('User Deleted', 'Success');
-        return redirect()->back();
+//        $user->delete();
+//        Toastr::success('User Deleted', 'Success');
+        return $user;
+
     }
 }

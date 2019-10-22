@@ -32,6 +32,7 @@ Route::group(['as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middlewa
     Route::post('information/update', 'InformationController@update')->name('information.update');
     Route::resource('complain', 'ComplainController');
     Route::resource('user', 'UserController');
+    Route::post('user/role', 'UserController@update_role')->name('user.role');
 });
 
 //moderator route group
@@ -43,6 +44,7 @@ Route::group(['as'=>'moderator.', 'prefix'=>'moderator', 'namespace'=>'Moderator
     Route::get('information/edit', 'InformationController@edit')->name('information.edit');
     Route::post('information/update', 'InformationController@update')->name('information.update');
     Route::resource('complain', 'ComplainController');
+    Route::resource('user', 'UserController');
 });
 
 //user router group
