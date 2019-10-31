@@ -11,6 +11,14 @@ class InformationController extends Controller
 {
     public function index(){
         $information = Information::find(1);
+        if ($information == Null){
+            $information = new Information();
+            $information->man = 100;
+            $information->woman = 100;
+            $information->people = 100;
+            $information->place = 100;
+            $information->save();
+        }
         return view('admin.information.index', compact('information'));
     }
 
@@ -20,7 +28,11 @@ class InformationController extends Controller
     }
 
     public function update(Request $request){
+        // return $request->all();?
         $information = Information::find(1);
+        if ($information==null){
+            $information = new Information();
+        }
         $this->validate($request, [
             'man'=>'required|numeric',
             'woman'=>'required|numeric',

@@ -22,19 +22,43 @@
                             <tbody>
                             <tr>
                                 <td>Total Man:</td>
-                                <td>{{ $information->man }}</td>
+                                <td> @if($information == null)
+                                    {{ 100 }}
+                                    @else
+                                    {{ $information->man }}
+                                    @endif
+
+                                </td>
                             </tr>
                             <tr>
                                 <td>Total Woman:</td>
-                                <td>{{ $information->woman }}</td>
+                                <td>
+                                        @if($information == null)
+                                        {{ 100 }}
+                                        @else
+                                        {{ $information->woman }}
+                                        @endif
+                                </td>
                             </tr>
                             <tr>
                                 <td>Total People:</td>
-                                <td>{{ $information->people }}</td>
+                                <td>
+                                        @if($information == null)
+                                        {{ 100 }}
+                                        @else
+                                        {{ $information->people }}
+                                        @endif
+                                </td>
                             </tr>
                             <tr>
                                 <td>Total Place:</td>
-                                <td>{{ $information->place }}</td>
+                                <td>
+                                        @if($information == null)
+                                        {{ 100 }}
+                                        @else
+                                        {{ $information->place }}
+                                        @endif
+                                </td>
                             </tr>
                             </tbody>
                         </table>
