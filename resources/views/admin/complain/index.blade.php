@@ -21,31 +21,31 @@
                         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>Serial</th>
+                                <th>Title</th>
+                                <th>Subject</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Complain</th>
                                 <th>Created</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Complain</th>
-                                <th>Created</th>
-                                <th>Action</th>
+                                    <th>Serial</th>
+                                    <th>Title</th>
+                                    <th>Subject</th>
+                                    <th>Name</th>
+                                    <th>Created</th>
+                                    <th>Action</th>
                             </tr>
                             </tfoot>
                             <tbody>
                             @foreach($complains as $key=>$complain)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $complain->name }}</td>
-                                <td>{{ $complain->email }}</td>
-                                <td>{{ substr($complain->complain, 12) }}</td>
+                                <td>{{ $complain->title }}</td>
+                                <td>{{ $complain->subject }}</td>
+                                <td>{{ $complain->user->name }}</td>
                                 <td>{{ $complain->created_at->toFormattedDateString() }}</td>
                                 <td>
                                     <a class="btn btn-success" href="{{ route('admin.complain.show', $complain->id) }}">

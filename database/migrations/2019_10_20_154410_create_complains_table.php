@@ -15,11 +15,18 @@ class CreateComplainsTable extends Migration
     {
         Schema::create('complains', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
+            $table->string('title');
+            $table->string('subject');
+            $table->bigInteger('user_id')->unsigned();
+            $table->string('image')->default("default.jpg");
             $table->longText('complain');
+            $table->foreign('user_id')
+            ->on('users')
+            ->references('id')
+            ->onDelete('CASCADE');
             $table->timestamps();
         });
+
     }
 
     /**

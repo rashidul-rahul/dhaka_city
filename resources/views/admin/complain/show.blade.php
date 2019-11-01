@@ -9,22 +9,44 @@
 
 @section('content')
     <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="card">
-                <div class="header">
-                    <h3>{{ $complain->name }}</h3>
-                    <h4>{{ $complain->email }}</h4>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                    <div class="card">
+                        <div class="header bg-blue">
+                            <h2>
+                                {{ $complain->title }} <small>{{ $complain->subject }}</small>
+                            </h2>
+                        </div>
+                        <div class="body">
+                            <div>
+                                <img class="img-fluid" src="{{ Storage::disk('public')->url('complain/'.$complain->image) }}" alt="">
+                            </div>
+                            <hr>
+                            <div>
+                                <h3>Description:</h3>
+                                <br>
+                                <p>{{ $complain->complain }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="body">
+        {{-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Complain: {{ $complain->name }}</h3>
+                    <h4>User Email: {{ $complain->user->email }}</h4>
+                    <h4>User Name: {{ $complain->user->name }}</h4>
+                </div>
+                <div class="card-body">
                     <div>
                         <br>
-                        <h4>{{ $complain->complain }}</h4>
+                        <img src="{{ Storage::disk('public')->url('complain/'.$complain->image) }}" alt="">
+                        <p>{{ $complain->complain }}</p>
                     </div>
                     <a href="{{ route('admin.complain.index') }}" class="btn btn-success">Back</a>
                 </div>
 
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- #END# Basic Examples -->
 @endsection

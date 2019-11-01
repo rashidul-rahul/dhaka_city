@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                               Add Notice
+                               Add content
                             </h2>
                         </div>
                         <div class="body">

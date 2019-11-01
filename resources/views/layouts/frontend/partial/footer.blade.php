@@ -7,25 +7,32 @@
                         <h3>Complain Box</h3>
                     </div>
                    <div class="">
-                       <form action="{{ route('complain.store') }}" method="POST">
+                       @if(Auth::user())
+                       <form action="{{ route('complain.store') }}" method="POST" enctype="multipart/form-data">
                            @csrf
                            <div class="form-group">
-                               @guest()
-                                   <label for="name">Name</label>
-                                   <input type="text" name="name" id="name" class="form-control" placeholder="Type Your Name">
-                               @endguest
+                                   {{-- <label for="title">Title</label> --}}
+                                   <input type="text" name="title" id="title" class="form-control" placeholder="Complain Title">
                            </div>
                            <div class="form-group">
-                               @guest()
-                                   <label for="email">Email</label>
-                                   <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-                               @endguest
+                                   {{-- <label for="email">Email</label> --}}
+                                   <input type="text" name="subject" class="form-control" placeholder="Subject">
                            </div>
                            <div class="form-group">
                                <textarea name="complain" id="" class="form-control" placeholder="Explain your complain"></textarea>
                            </div>
+                           <div class="from-group">
+                               <label for="image">Upload Image (if any):</label>
+                               <input class="form-control" type="file" id="image" name="image">
+                           </div>
+                           <br>
                            <button type="submit" class="btn btn-circle btn-info" value="">Submit</button>
                        </form>
+                       @else
+                       <div class="widget-title">
+                            <p>For complain please <a href="{{ route("register") }}" style="color:red">Register</a> or <a href="{{ route("login") }}" style="color:red">login</a></p>
+                       </div>
+                       @endif
                    </div>
                 </div><!-- end clearfix -->
             </div><!-- end col -->

@@ -13,7 +13,8 @@ class IndexController extends Controller
     public function index(){
         $information = Information::find(1);
         $feature = "Feature";
-        return view('welcome', compact('information', 'feature'));
+        $categories = Category::all();
+        return view('welcome', compact('information', 'feature', 'categories'));
     }
 
     public function notice(){

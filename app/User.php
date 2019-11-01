@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function contents(){
         return $this->hasMany('App\Content');
     }
+
+    public function complain(){
+        return $this->hasMany('App\Complain');
+    }
 }
