@@ -49,7 +49,7 @@
                                 <td>{{ $notice->user->name }}</td>
                                 <td>{{ $notice->updated_at->toFormattedDateString() }}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{{ Storage::disk('public')->url('notices/'.$notice->link) }}" target="_blank">
+                                    <a class="btn btn-success" href="{{ route("moderator.notice.show", $notice->id) }}">
                                         <i class="material-icons">visibility</i>
                                     </a>
                                         <a class="btn btn-info waves-effect" href="{{ route('moderator.notice.edit', $notice->id) }}"><i class="material-icons">edit</i></a>

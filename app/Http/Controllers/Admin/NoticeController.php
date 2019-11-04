@@ -83,7 +83,7 @@ class NoticeController extends Controller
      */
     public function show(Notice $notice)
     {
-        //
+        return view('admin.notice.show', compact("notice"));
     }
 
     /**

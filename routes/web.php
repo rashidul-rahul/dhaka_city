@@ -13,6 +13,7 @@
 
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('notice', 'IndexController@notice')->name('notice');
+Route::get('notice/view', 'IndexController@notice_view')->name('notice.view');
 Route::get('about', 'IndexController@about')->name('about');
 Route::get('information', 'IndexController@information')->name('information');
 Route::resource("complain", "ComplainController");

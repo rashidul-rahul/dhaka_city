@@ -29,4 +29,12 @@ class IndexController extends Controller
         $categories = Category::all();
         return view('information', compact('contents', 'categories'));
     }
+    public function notice_view(Request $request){
+        $notice = Notice::find($request["id"]);
+        if ($notice == null){
+            return "NO DATA FOUND";
+        }
+        return view('notice-view', compact("notice"));
+
+    }
 }
