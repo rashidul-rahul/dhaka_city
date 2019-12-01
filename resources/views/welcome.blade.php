@@ -40,7 +40,7 @@
                         <div class="slider-content-area">
                             <div class="slide-text">
                                 <h1 class="homepage-three-title">Dhaka <span>The City of</span> Mosque</h1>
-                                <h2>With GoodWEB Solutions responsive landing page template, <br>you can promote your all web design & development services. </h2>
+                                <h2>Mosques commonly serve as locations for prayer, Ramadan vigils, funeral services <br> Sufi ceremonies, marriage and business agreements, alms collection and distribution, as well as homeless shelters. </h2>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="slider-content-area">
                             <div class="slide-text">
                                 <h1 class="homepage-three-title">2 <span>Installation</span> Services</h1>
-                                <h2>With GoodWEB Solutions responsive landing page template, <br>you can promote your all web design & development services. </h2>
+                                <h2>Dhaka is the economic, political and cultural center of Bangladesh. It is the major cities of South Asia, <br> the largest city in Eastern South Asia and among the Bay of Bengal countries</h2>
                                 <div class="slider-content-btn">
                                     <a class="button btn btn-light btn-radius btn-brd" href="#">Read More</a>
                                     <a class="button btn btn-light btn-radius btn-brd" href="#">Contact</a>
@@ -68,7 +68,7 @@
                         <div class="slider-content-area">
                             <div class="slide-text">
                                 <h1 class="homepage-three-title">3 <span>Installation</span> Services</h1>
-                                <h2>With GoodWEB Solutions responsive landing page template, <br>you can promote your all web design & development services.</h2>
+                                <h2>Dhaka is the financial, commercial and the entertainment capital of Bangladesh, <br> With an estimated GDP of $156 billion, it accounts up to 35% of Bangladesh's economy.</h2>
                             </div>
                         </div>
                     </div>
@@ -83,9 +83,10 @@
                     <div class="message-box">
                         <h4>City Mayor Speech</h4>
                         <h2>Welcome to Dhaka City</h2>
-                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
+                        <p class="lead">Dhaka South City Corporation (DSCC) Mayor Sayeed Khokon today said bus route franchise system can be a possible solution to the crisis that the transport sector in the country is currently facing now.</p>
 
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
+                        <p> Under the bus route franchise system, all existing bus companies operating on a particular route with valid permit will run under five bus companies, which will bring discipline back in this sector, Mayor Khokon said.
+                         The DSCC mayor also mentioned that a meeting will be held at Local Government and Rural Development (LGRD) Ministry tomorrow with concerned authorities to discuss the possible solution to resolve this ongoing crisis in the city’s public transport sector.The city corporation authorities will take necessary steps to resolve the crisis based on the outcomes of the meeting, he said.Khokon also said a group of people are trying to instigate and misuse the demonstrating students of schools and colleges amid the ongoing protests to serve the interest of a vested quarter. </p>
 
                         <a href="#services" class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
                     </div><!-- end messagebox -->
@@ -111,9 +112,9 @@
                     <div class="message-box">
                         <h4>Quick Links</h4>
                         <h2>Here found some link of Bangladesh Government Service</h2>
-                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
+                        <p class="lead">For a country to develop and keep up with the times, it is necessary that it creates a working infrastructure. It is the country's public services sector that is concerned with this. Public services in Bangladesh are services provided by the government to the community.</p>
 
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>
+                        <p> The Police Force in Bangladesh provides the people with internal security as well as acting to guard the nation’s assets from terrorists and criminal elements. Bangladesh’s police service falls under the jurisdiction of the Ministry of Home Affairs. In recent times a police reform program has been put in action to improve their skills and effectiveness. Police in Bangladesh play a vital role in maintaining domestic peace, handling criminals, investigating crimes and so on. </p>
 
                         <a href="#services" class="btn btn-light btn-radius btn-brd grd1">Learn More</a>
                     </div><!-- end messagebox -->
@@ -192,7 +193,7 @@
                     </div>
                     <div class="service-dit">
                         <h3>Ambulance</h3>
-                        <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
+                        <p>Most of the hospitals in Dhaka have their own ambulance service to serve people in emergency moments. Besides, there are some private ambulance services who serve people in cheap price. A list of Hospitals and their ambulance services contact numbers are given below.Square Hospital – 8144466, 8144477, 8144488 Apollo Hospitals Dhaka – 10678 United – 10666, 01914001234 Central – 01733972986Ad-din Women’s Medical College Hospital – 01713488411-15Monow</p>
                     </div>
                 </div>
                 <!-- end service -->
@@ -203,7 +204,7 @@
                     </div>
                     <div class="service-dit">
                         <h3>Police</h3>
-                        <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
+                        <p>The Dhaka Metropolitan Police is the unit of Bangladesh Police responsible for law enforcement in the metropolis of Dhaka, the national capital and most populous city in Bangladesh. The DMP is the largest police force in Bangladesh. At present the DMP commissioner is Md. Shafiqul Islam BPM.DMP Control Room-9575500, 01817602050 Traffic Control Room 9575501, 01711000990, 01711000991, 01707806111</p>
                     </div>
                 </div>
                 <!-- end service -->
@@ -215,7 +216,7 @@
                     </div>
                     <div class="service-dit">
                         <h3>Fire Service</h3>
-                        <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis accumsan.</p>
+                        <p>Bangladesh Fire Service and Civil Defense Call 02-9555555.Bangladesh Fire Service and Civil Defence is a department responsible rescue missions in Bangladesh including fire safety, safety during air raids and any kind of disaster. Emergency hotline for fire service is 9-9-9. The Present Director General is Brigadier General Sazzad Hossin</p>
                     </div>
                 </div>
                 <!-- end service -->
@@ -231,8 +232,8 @@
                 <div class="col-md-6">
                     <div class="customwidget text-left">
                         <h1>Speech of Dhaka Police</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, quas. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deleniti magnam obcaecati suscipit temporibus voluptas.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis harum iure nam officiis ratione sit soluta voluptatibus. Doloribus facilis, nisi!</p>
+                        <p>Outgoing Dhaka Metropolitan Police (DMP) Commissioner Asaduzzaman Mia <br> has been appointed as chief executive officer of National Security Affairs Cell under the Cabinet Division.Asaduzzaman was appointed to the post on contract basis for the next three years from September 14, according to the notice</p>
+                        <p>ontacted, Asaduzzaman said his area of work will be providing secretarial service to the security cell.Replying to another query, he said the cell was formed under the Cabinet Division around three months ago.</p>
                     </div>
                 </div><!-- end col -->
                 <div class="col-md-6">
@@ -286,7 +287,7 @@
                     </ul>
                 </div>
                 <div class="col-md-4 hidden-xs hidden-sm">
-                    <img src="{{ asset('assets/frontend/uploads/ipad.png') }}" class="img-center img-responsive" alt="">
+                    <img src="{{ asset('assets/frontend/uploads/ipad.jpg') }}" class="img-center img-responsive" alt="">
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <ul class="features-right">
