@@ -51,4 +51,8 @@ Route::group(['as'=>'moderator.', 'prefix'=>'moderator', 'namespace'=>'Moderator
 //user router group
 Route::group(['as'=>'user.', 'prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth', 'user']], function (){
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('notice', 'NoticeController@index')->name('notice.index');
+    Route::get('notice/{notice} ', 'NoticeController@show')->name('notice.show');
+    Route::get('complain', 'ComplainController@index')->name('complain.index');
+    Route::get('complain/{complain} ', 'ComplainController@show')->name('complain.show');
 });

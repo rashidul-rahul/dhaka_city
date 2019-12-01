@@ -15,8 +15,20 @@
                             <h2>
                                 {{ $complain->title }} <small>{{ $complain->subject }}</small>
                             </h2>
+
                         </div>
                         <div class="body">
+                            <div class="alert alert-danger">
+                                <h4>
+                                    @if($complain->is_view)
+                                        We already seen your Complain. We will take action very soon
+                                    @elseif($complain->is_complete)
+                                        We already taken action about your complain. Thank you for inform us
+                                    @else
+                                        We got your complain. We will review your Complain very soon. We are very sorry about that
+                                    @endif
+                                </h4>
+                            </div>
                             <div>
                                 <img class="img-fluid" src="{{ Storage::disk('public')->url('complain/'.$complain->image) }}" alt="">
                             </div>
@@ -26,10 +38,27 @@
                                 <br>
                                 <p>{{ $complain->complain }}</p>
                             </div>
-                            <a class="btn btn-success" href="{{ route('admin.complain.edit', $complain->id) }}">Successfully Solve Problem</a>
                         </div>
                     </div>
                 </div>
+        {{-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Complain: {{ $complain->name }}</h3>
+                    <h4>User Email: {{ $complain->user->email }}</h4>
+                    <h4>User Name: {{ $complain->user->name }}</h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <br>
+                        <img src="{{ Storage::disk('public')->url('complain/'.$complain->image) }}" alt="">
+                        <p>{{ $complain->complain }}</p>
+                    </div>
+                    <a href="{{ route('admin.complain.index') }}" class="btn btn-success">Back</a>
+                </div>
+
+            </div>
+        </div> --}}
     </div>
     <!-- #END# Basic Examples -->
 @endsection

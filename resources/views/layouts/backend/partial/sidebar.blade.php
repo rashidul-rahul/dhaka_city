@@ -149,6 +149,18 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('user/information*') ? 'active':'' }}">
+                        <a href="{{ route('user.notice.index') }}">
+                            <i class="material-icons">description</i>
+                            <span>Notice</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('user/complain*') ? 'active':'' }}">
+                        <a href="{{ route('user.complain.index') }}">
+                            <i class="material-icons">record_voice_over</i>
+                            <span>My Complains</span>
+                        </a>
+                    </li>
                     <li class="header">Settings</li>
                     <li>
                     <li><a href="javascript:void(0);" onclick="event.preventDefault();

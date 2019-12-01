@@ -49,6 +49,8 @@ class ComplainController extends Controller
      */
     public function show(Complain $complain)
     {
+        $complain->is_view = true;
+        $complain->save();
         return view('admin.complain.show', compact('complain'));
     }
 
@@ -60,7 +62,10 @@ class ComplainController extends Controller
      */
     public function edit(Complain $complain)
     {
-        //
+        $complain->is_complete = true;
+        $complain->save();
+        Toastr::success("Job Complete Successfully", "Success");
+        return redirect()->route('admin.complain.index');
     }
 
     /**

@@ -23,8 +23,8 @@
                             <tr>
                                 <th>Serial</th>
                                 <th>Title</th>
-                                <th>Subject</th>
                                 <th>Name</th>
+                                <th>Status</th>
                                 <th>Created</th>
                                 <th>Action</th>
                             </tr>
@@ -33,8 +33,8 @@
                             <tr>
                                     <th>Serial</th>
                                     <th>Title</th>
-                                    <th>Subject</th>
                                     <th>Name</th>
+                                    <th>Status</th>
                                     <th>Created</th>
                                     <th>Action</th>
                             </tr>
@@ -44,8 +44,17 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $complain->title }}</td>
-                                <td>{{ $complain->subject }}</td>
                                 <td>{{ $complain->user->name }}</td>
+                                <td>
+                                    @if($complain->is_complete)
+                                        <h4 style="color: green">Done</h4>
+                                        @elseif($complain->is_view)
+                                        <h4 style="color: yellow">Pending</h4>
+                                    @else
+                                        {{ $complain->is_complete }}
+                                        <h4 style="color: red">Not Seen</h4>
+                                    @endif
+                                </td>
                                 <td>{{ $complain->created_at->toFormattedDateString() }}</td>
                                 <td>
                                     <a class="btn btn-success" href="{{ route('admin.complain.show', $complain->id) }}">

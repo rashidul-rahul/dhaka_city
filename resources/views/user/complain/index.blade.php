@@ -23,18 +23,18 @@
                             <tr>
                                 <th>Serial</th>
                                 <th>Title</th>
-                                <th>Status</th>
                                 <th>Created</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tfoot>
                             <tr>
-                                <th>Serial</th>
-                                <th>Title</th>
-                                <th>Status</th>
-                                <th>Created</th>
-                                <th>Action</th>
+                                    <th>Serial</th>
+                                    <th>Title</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                             </tr>
                             </tfoot>
                             <tbody>
@@ -42,21 +42,21 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $complain->title }}</td>
-                                <td> @if($complain->is_complete)
-                                        <h4 style="color: green">Done</h4>
-                                    @elseif($complain->is_view)
-                                        <h4 style="color: yellow">Pending</h4>
-                                    @else
-                                        {{ $complain->is_complete }}
-                                        <h4 style="color: red">Not Seen</h4>
-                                    @endif</td>
+                                <td>{{ $complain->subject }}</td>
                                 <td>{{ $complain->created_at->toFormattedDateString() }}</td>
                                 <td>
-                                    <a class="btn btn-success" href="{{ route('moderator.complain.show', $complain->id) }}">
+                                    @if($complain->is_view)
+                                        <p>On review</p>
+                                        @elseif($complain->is_complete)
+                                        <p>Action Taken</p>
+                                    @else
+                                    <p>Not seen</p>
+                                        @endif
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" href="{{ route('user.complain.show', $complain->id) }}">
                                         <i class="material-icons">visibility</i>
                                     </a>
-                                    <button class="btn btn-danger waves-effect" onclick="deleteComplain({{ $complain->id }})"><i class="material-icons">delete</i></button>
-                                    <form style="display: none" method="POST" action="{{ route('moderator.complain.destroy', $complain->id) }}" id="delete-complain-{{ $complain->id }}">@csrf @method('DELETE')</form>
                                 </td>
                             </tr>
                                 @endforeach

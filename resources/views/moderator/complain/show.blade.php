@@ -11,18 +11,23 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header">
-                    <h3>{{ $complain->name }}</h3>
-                    <h4>{{ $complain->email }}</h4>
+                <div class="header bg-blue">
+                    <h2>
+                        {{ $complain->title }} <small>{{ $complain->subject }}</small>
+                    </h2>
                 </div>
                 <div class="body">
                     <div>
-                        <br>
-                        <h4>{{ $complain->complain }}</h4>
+                        <img class="img-fluid" src="{{ Storage::disk('public')->url('complain/'.$complain->image) }}" alt="">
                     </div>
-                    <a href="{{ route('moderator.complain.index') }}" class="btn btn-success">Back</a>
+                    <hr>
+                    <div>
+                        <h3>Description:</h3>
+                        <br>
+                        <p>{{ $complain->complain }}</p>
+                    </div>
+                    <a class="btn btn-success" href="{{ route('moderator.complain.edit', $complain->id) }}">Successfully Solve Problem</a>
                 </div>
-
             </div>
         </div>
     </div>
