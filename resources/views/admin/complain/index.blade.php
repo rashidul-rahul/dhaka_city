@@ -51,7 +51,6 @@
                                         @elseif($complain->is_view)
                                         <h4 style="color: yellow">Pending</h4>
                                     @else
-                                        {{ $complain->is_complete }}
                                         <h4 style="color: red">Not Seen</h4>
                                     @endif
                                 </td>

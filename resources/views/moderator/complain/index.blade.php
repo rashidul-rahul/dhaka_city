@@ -42,7 +42,7 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $complain->title }}</td>
-                                <td> @if($complain->is_complete)
+                                    <td> @if($complain->is_complete)
                                         <h4 style="color: green">Done</h4>
                                     @elseif($complain->is_view)
                                         <h4 style="color: yellow">Pending</h4>
