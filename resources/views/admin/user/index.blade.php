@@ -14,10 +14,7 @@
                 <div class="header">
                     <h2>
                         All User
-                        <a href="{{ route('admin.user.create') }}" class="btn btn-success waves-effect">
-                            <i class="material-icons">add</i>
-                            <span>Add</span>
-                        </a>
+                        
                     </h2>
                 </div>
                 <div class="body">
