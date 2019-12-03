@@ -18,7 +18,7 @@
                 </div>
                 <div class="body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <table class="table table-bordered table-hover js-basic-example dataTable">
                             <thead>
                             <tr>
                                 <th>Serial</th>
@@ -39,7 +39,7 @@
                             </tfoot>
                             <tbody>
                             @foreach($complains as $key=>$complain)
-                            <tr>
+                            <tr class="{{ $complain->is_view == true ? '':'bg-info' }}">
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $complain->title }}</td>
                                     <td> @if($complain->is_complete)
@@ -47,7 +47,6 @@
                                     @elseif($complain->is_view)
                                         <h4 style="color: yellow">Pending</h4>
                                     @else
-                                        {{ $complain->is_complete }}
                                         <h4 style="color: red">Not Seen</h4>
                                     @endif</td>
                                 <td>{{ $complain->created_at->toFormattedDateString() }}</td>

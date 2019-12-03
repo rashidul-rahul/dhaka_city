@@ -8,10 +8,13 @@ use App\Notice;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
 
 class DashboardController extends Controller
 {
     public function index(){
+        $new_complain = Complain::where('is_view', false)->count();
+        Session::put('new_complain', $new_complain);
         $user_count = User::all()->count();
         if($user_count == null){
             $user_count = 0;
