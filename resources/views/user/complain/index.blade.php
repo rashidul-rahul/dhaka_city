@@ -42,13 +42,12 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $complain->title }}</td>
-                                <td>{{ $complain->subject }}</td>
                                 <td>{{ $complain->created_at->toFormattedDateString() }}</td>
                                 <td>
-                                    @if($complain->is_view)
+                                    @if($complain->is_complete)
+                                        <p>Solved</p>
+                                        @elseif($complain->is_view)
                                         <p>On review</p>
-                                        @elseif($complain->is_complete)
-                                        <p>Action Taken</p>
                                     @else
                                     <p>Not seen</p>
                                         @endif

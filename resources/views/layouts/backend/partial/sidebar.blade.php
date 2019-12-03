@@ -71,6 +71,12 @@
                         <a href="{{ route('admin.complain.index') }}">
                             <i class="material-icons">record_voice_over</i>
                             <span>Complains</span>
+                                @if(Session::get("new_complain") != 0)
+                                <span style="color: blue" class="badge">
+                                    {{ Session::get("new_complain") }}
+                                    </span>
+                                    @endif
+
                         </a>
                     </li>
                     <li class="{{ Request::is('admin/user*') ? 'active':'' }}">
@@ -121,6 +127,12 @@
                         <a href="{{ route('moderator.complain.index') }}">
                             <i class="material-icons">record_voice_over</i>
                             <span>Complains</span>
+                                @if(Session::get("new_complain") != 0)
+                                <span style="color: blue" class="badge">
+                                    {{ Session::get("new_complain") }}
+                                    </span>
+                                @endif
+
                         </a>
                     </li>
                     <li class="{{ Request::is('moderator/user*') ? 'active':'' }}">

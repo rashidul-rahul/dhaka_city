@@ -18,12 +18,12 @@
 
                         </div>
                         <div class="body">
-                            <div class="alert alert-danger">
+                            <div class="alert alert-success">
                                 <h4>
-                                    @if($complain->is_view)
-                                        We already seen your Complain. We will take action very soon
+                                    @if($complain->is_complete)
+                                        Your complained problem is solved. Thank you for inform us
                                     @elseif($complain->is_complete)
-                                        We already taken action about your complain. Thank you for inform us
+                                        We already seen your Complain. We will take action very soon
                                     @else
                                         We got your complain. We will review your Complain very soon. We are very sorry about that
                                     @endif
@@ -37,6 +37,34 @@
                                 <h3>Description:</h3>
                                 <br>
                                 <p>{{ $complain->complain }}</p>
+                            </div>
+                            <hr>
+                            <div>
+                                <h3>Feedback</h3>
+                                @foreach($complain->feedback as $feedback)
+                                    @if($feedback->user->role_id == 1 or $feedback->user->role_id == 2)
+                                        <div class="alert alert-info">
+                                            <small>{{ $feedback->user->username }}-{{ $feedback->created_at->toFormattedDateString() }}</small><br>
+                                            {{ $feedback->feedback }}
+                                        </div>
+                                    @else
+                                        <div class="alert alert-warning">
+                                            <small>You-{{ $feedback->created_at->toFormattedDateString() }}</small><br>
+                                            {{ $feedback->feedback }}
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                            <div>
+                                <form action="{{ route('feedback.create') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="complain" value="{{ $complain->id }}">
+                                    <div class="form-group">
+                                        <textarea class="form-control bg-blue-grey" name="feedback"></textarea>
+                                    </div>
+                                    <button class="btn btn-success" type="submit">Submit Feedback</button>
+                                    <a class="btn btn-danger" href="{{ route('admin.complain.edit', $complain->id) }}">Successfully Solve Problem</a>
+                                </form>
                             </div>
                         </div>
                     </div>

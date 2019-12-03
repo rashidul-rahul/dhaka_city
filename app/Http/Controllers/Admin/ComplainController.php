@@ -6,6 +6,7 @@ use App\Complain;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Session;
 
 class ComplainController extends Controller
 {
@@ -49,8 +50,13 @@ class ComplainController extends Controller
      */
     public function show(Complain $complain)
     {
-        $complain->is_view = true;
-        $complain->save();
+        if ($complain->is_view == false){
+            $complain->is_view = true;
+            $complain->save();
+            $set = Complain::where('is_view', false)->count();
+            Session::put("new_complain", $set);
+
+        }
         return view('admin.complain.show', compact('complain'));
     }
 

@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="slider-content-area">
                             <div class="slide-text">
-                                <h1 class="homepage-three-title">Dhaka <span>The City of</span> Mosque</h1>
+                                <h1 class="homepage-three-title">The city of mosque</h1>
                                 <h2>Mosques commonly serve as locations for prayer, Ramadan vigils, funeral services <br> Sufi ceremonies, marriage and business agreements, alms collection and distribution, as well as homeless shelters. </h2>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="slider-content-area">
                             <div class="slide-text">
-                                <h1 class="homepage-three-title">2 <span>Installation</span> Services</h1>
+                                <h1 class="homepage-three-title">The city or color</h1>
                                 <h2>Dhaka is the economic, political and cultural center of Bangladesh. It is the major cities of South Asia, <br> the largest city in Eastern South Asia and among the Bay of Bengal countries</h2>
                                 <div class="slider-content-btn">
                                     <a class="button btn btn-light btn-radius btn-brd" href="#">Read More</a>
@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="slider-content-area">
                             <div class="slide-text">
-                                <h1 class="homepage-three-title">3 <span>Installation</span> Services</h1>
+                                <h1 class="homepage-three-title">The city of joy</h1>
                                 <h2>Dhaka is the financial, commercial and the entertainment capital of Bangladesh, <br> With an estimated GDP of $156 billion, it accounts up to 35% of Bangladesh's economy.</h2>
                             </div>
                         </div>

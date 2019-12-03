@@ -26,7 +26,34 @@
                                 <br>
                                 <p>{{ $complain->complain }}</p>
                             </div>
-                            <a class="btn btn-success" href="{{ route('admin.complain.edit', $complain->id) }}">Successfully Solve Problem</a>
+                            <hr>
+                            <div>
+                                <h3>Feedback</h3>
+                                @foreach($complain->feedback as $feedback)
+                                    @if($feedback->user->role_id == 1 or $feedback->user->role_id == 2)
+                                    <div class="alert alert-info">
+                                        <small>{{ $feedback->user->username }}-{{ $feedback->created_at->toFormattedDateString() }}</small><br>
+                                        {{ $feedback->feedback }}
+                                    </div>
+                                    @else
+                                        <div class="alert alert-warning">
+                                            <small>{{ $feedback->user->username }}-{{ $feedback->created_at->toFormattedDateString() }}</small><br>
+                                            {{ $feedback->feedback }}
+                                        </div>
+                                        @endif
+                                    @endforeach
+                            </div>
+                            <div>
+                                <form action="{{ route('feedback.create') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="complain" value="{{ $complain->id }}">
+                                    <div class="form-group">
+                                        <textarea class="form-control bg-blue-grey" name="feedback"></textarea>
+                                    </div>
+                                    <button class="btn btn-success" type="submit">Submit Feedback</button>
+                                    <a class="btn btn-danger" href="{{ route('admin.complain.edit', $complain->id) }}">Successfully Solve Problem</a>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

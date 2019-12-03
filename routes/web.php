@@ -16,6 +16,7 @@ Route::get('notice', 'IndexController@notice')->name('notice');
 Route::get('notice/view', 'IndexController@notice_view')->name('notice.view');
 Route::get('about', 'IndexController@about')->name('about');
 Route::get('information', 'IndexController@information')->name('information');
+Route::post('feedback/', 'FeedbackController@create')->name('feedback.create');
 Route::resource("complain", "ComplainController");
 
 Auth::routes();
